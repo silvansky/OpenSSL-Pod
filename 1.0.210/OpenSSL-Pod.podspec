@@ -16,17 +16,15 @@ Pod::Spec.new do |s|
     MIN_SDK_VERSION_FLAG="-miphoneos-version-min=7.0"
 
     BASEPATH="${PWD}"
-    cd "${BASEPATH}"
-    CURRENTPATH="${BASEPATH}/tmp/openssl"
+    CURRENTPATH="/tmp/openssl"
     ARCHS="i386 x86_64 armv7 armv7s arm64"
     DEVELOPER=`xcode-select -print-path`
 
     mkdir -p "${CURRENTPATH}"
     mkdir -p "${CURRENTPATH}/bin"
     ls
-    cp "${BASEPATH}/openssl-1.0.2j.tar.gz" "${CURRENTPATH}/file.tgz"
+    cp -a . "${CURRENTPATH}/openssl-${VERSION}"
     cd "${CURRENTPATH}"
-    tar -xzf file.tgz
     cd "openssl-${VERSION}"
 
     for ARCH in ${ARCHS}

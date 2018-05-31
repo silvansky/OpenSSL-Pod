@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     MIN_SDK_VERSION_FLAG="-miphoneos-version-min=7.0"
 
     BASEPATH="${PWD}"
-    cd BASEPATH
+    cd "${BASEPATH}"
     CURRENTPATH="/tmp/openssl"
     ARCHS="i386 x86_64 armv7 armv7s arm64"
     DEVELOPER=`xcode-select -print-path`

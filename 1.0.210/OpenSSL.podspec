@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
     mkdir -p "${CURRENTPATH}"
     mkdir -p "${CURRENTPATH}/bin"
-
+    ls
     cp "openssl-1.0.2j.tar.gz" "${CURRENTPATH}/file.tgz"
     cd "${CURRENTPATH}"
     tar -xzf file.tgz

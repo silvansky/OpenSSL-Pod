@@ -6,7 +6,6 @@ Pod::Spec.new do |s|
 
   s.homepage        = "https://github.com/FredericJacobs/OpenSSL-Pod"
   s.source          = { :http => "https://openssl.org/source/openssl-1.0.2j.tar.gz", :sha1 => "bdfbdb416942f666865fa48fe13c2d0e588df54f"}
-  s.preserve_paths  = "file.tgz", "opensslIncludes/*"
   s.source_files    = "opensslIncludes/openssl/*.h"
   s.header_dir      = "openssl"
   s.license         = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE' }
@@ -25,7 +24,7 @@ Pod::Spec.new do |s|
     mkdir -p "${CURRENTPATH}"
     mkdir -p "${CURRENTPATH}/bin"
 
-    cp "file.tgz" "${CURRENTPATH}/file.tgz"
+    cp "openssl-1.0.2j.tar.gz" "${CURRENTPATH}/file.tgz"
     cd "${CURRENTPATH}"
     tar -xzf file.tgz
     cd "openssl-${VERSION}"

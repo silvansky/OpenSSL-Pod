@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
     BASEPATH="${PWD}"
     cd "${BASEPATH}"
-    CURRENTPATH="/tmp/openssl"
+    CURRENTPATH="${BASEPATH}/tmp/openssl"
     ARCHS="i386 x86_64 armv7 armv7s arm64"
     DEVELOPER=`xcode-select -print-path`
 

@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
 
     curl -OL https://openssl.org/source/openssl-1.0.2j.tar.gz
     tar -xzvf openssl-1.0.2j.tar.gz
+    cd openssl-1.0.2j
 
     for ARCH in ${ARCHS}
     do
@@ -51,7 +52,6 @@ Pod::Spec.new do |s|
 
       echo "Building openssl-${VERSION} for ${PLATFORM} ${SDKVERSION} ${ARCH}"
       echo "Please stand by..."
-
 
       set -x  
 

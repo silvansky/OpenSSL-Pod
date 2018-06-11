@@ -1,6 +1,7 @@
 OpenSSL-Pod
 ===========
 
+Default version is 1.0.210, template podspec file moved to template dir.
 
 ### Version numbering 
 

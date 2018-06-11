@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
     cd "${CURRENTPATH}"
     cd "openssl-${VERSION}"
 
-    curl -OL https://openssl.org/source/openssl-1.0.2j.tar.gz
-    tar -xzvf openssl-1.0.2j.tar.gz
-    cd openssl-1.0.2j
+    curl -OL "https://openssl.org/source/openssl-${VERSION}.tar.gz"
+    tar -xzvf openssl-${VERSION}.tar.gz
+    cd "openssl-${VERSION}"
 
     for ARCH in ${ARCHS}
     do
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
     echo "Copying headers..."
     rm -rf "${BASEPATH}/opensslIncludes/"
     mkdir -p "${BASEPATH}/opensslIncludes/"
-    cp -RL "${CURRENTPATH}/openssl-${VERSION}/include/openssl" "${BASEPATH}/opensslIncludes/"
+    cp -RL "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/include/openssl" "${BASEPATH}/opensslIncludes/"
 
     cd "${BASEPATH}"
     echo "Building done."

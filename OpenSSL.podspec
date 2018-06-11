@@ -52,6 +52,9 @@ Pod::Spec.new do |s|
       echo "Building openssl-${VERSION} for ${PLATFORM} ${SDKVERSION} ${ARCH}"
       echo "Please stand by..."
 
+
+      set -x  
+
       export CC="${DEVELOPER}/usr/bin/gcc -arch ${ARCH} ${MIN_SDK_VERSION_FLAG}"
       mkdir -p "${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
       LOG="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-openssl-${VERSION}.log"
@@ -65,6 +68,8 @@ Pod::Spec.new do |s|
       make >> "${LOG}" 2>&1
       make all install_sw >> "${LOG}" 2>&1
       make clean >> "${LOG}" 2>&1
+
+      set +x
     done
 
 

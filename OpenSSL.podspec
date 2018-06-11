@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary         = "OpenSSL is an SSL/TLS and Crypto toolkit. Deprecated in Mac OS and gone in iOS, this spec gives your project non-deprecated OpenSSL support."
   s.author          = "OpenSSL Project <openssl-dev@openssl.org>"
 
-  s.homepage        = "https://github.com/FredericJacobs/OpenSSL-Pod"
+  s.homepage        = "https://github.com/silvansky/OpenSSL-Pod"
   s.source          = { :http => "https://openssl.org/source/openssl-1.0.2j.tar.gz", :sha1 => "bdfbdb416942f666865fa48fe13c2d0e588df54f"}
   s.source_files    = "opensslIncludes/openssl/*.h"
   s.header_dir      = "openssl"

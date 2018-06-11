@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
     cp -RL "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/include/openssl" "${BASEPATH}/opensslIncludes/"
 
     echo "Copying license file..."
-    cp -RL "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/LICENSE" "${BASEPATH}/"
+    cp "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/LICENSE" "${BASEPATH}/LICENSE"
 
     cd "${BASEPATH}"
     echo "Building done."

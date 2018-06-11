@@ -27,6 +27,9 @@ Pod::Spec.new do |s|
     cd "${CURRENTPATH}"
     cd "openssl-${VERSION}"
 
+    curl -O https://openssl.org/source/openssl-1.0.2j.tar.gz
+    tar -xzvf openssl-1.0.2j.tar.gz
+
     for ARCH in ${ARCHS}
     do
       CONFIGURE_FOR="iphoneos-cross"

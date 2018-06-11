@@ -85,6 +85,7 @@ Pod::Spec.new do |s|
     cp "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/LICENSE" "${BASEPATH}/LICENSE"
 
     cd "${BASEPATH}"
+
     echo "Building done."
 
     echo "Cleaning up..."

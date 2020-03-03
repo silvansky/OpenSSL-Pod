@@ -44,6 +44,11 @@ Pod::Spec.new do |s|
         fi
       else
         sed -ie "s!static volatile sig_atomic_t intr_signal;!static volatile intr_signal;!" "crypto/ui/ui_openssl.c"
+        # Fix build conflicts with BoringSSL
+        sed -ie "s/md5_block_data_order/openssl_shadowed_md5_block_data_order/g" "crypto/md32_common.h"
+        sed -ie "s/md5_block_data_order/openssl_shadowed_md5_block_data_order/g" "crypto/md5/md5_dgst.c"
+        sed -ie "s/md5_block_data_order/openssl_shadowed_md5_block_data_order/g" "crypto/md5/md5_locl.h"
+
         PLATFORM="iPhoneOS"
       fi
 

@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license         = { :type => 'OpenSSL (OpenSSL/SSLeay)', :file => 'LICENSE' }
 
   s.prepare_command = <<-CMD
-    VERSION="1.0.2j"
+    VERSION="1_0_2j"
     SDKVERSION=`xcrun --sdk iphoneos --show-sdk-version 2> /dev/null`
     MIN_SDK_VERSION_FLAG="-miphoneos-version-min=7.0"
 
@@ -20,6 +20,9 @@ Pod::Spec.new do |s|
     ARCHS="i386 x86_64 armv7 armv7s arm64"
     DEVELOPER=`xcode-select -print-path`
 
+    echo "BASEPATH: ${BASEPATH}"
+    echo "CURRENTPATH: ${CURRENTPATH}"
+    rm -rf "${CURRENTPATH}"
     mkdir -p "${CURRENTPATH}"
     mkdir -p "${CURRENTPATH}/bin"
     ls
@@ -27,9 +30,9 @@ Pod::Spec.new do |s|
     cd "${CURRENTPATH}"
     cd "openssl-${VERSION}"
 
-    curl -OL "https://openssl.org/source/openssl-${VERSION}.tar.gz"
-    tar -xzvf openssl-${VERSION}.tar.gz
-    cd "openssl-${VERSION}"
+    curl -OL "https://github.com/openssl/openssl/archive/OpenSSL_${VERSION}.tar.gz"
+    tar -xzvf OpenSSL_${VERSION}.tar.gz
+    cd "openssl-OpenSSL_${VERSION}"
 
     for ARCH in ${ARCHS}
     do
@@ -84,10 +87,10 @@ Pod::Spec.new do |s|
     echo "Copying headers..."
     rm -rf "${BASEPATH}/opensslIncludes/"
     mkdir -p "${BASEPATH}/opensslIncludes/"
-    cp -RL "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/include/openssl" "${BASEPATH}/opensslIncludes/"
+    cp -RL "${CURRENTPATH}/openssl-${VERSION}/openssl-OpenSSL_${VERSION}/include/openssl" "${BASEPATH}/opensslIncludes/"
 
     echo "Copying license file..."
-    cp "${CURRENTPATH}/openssl-${VERSION}/openssl-${VERSION}/LICENSE" "${BASEPATH}/LICENSE"
+    cp "${CURRENTPATH}/openssl-${VERSION}/openssl-OpenSSL_${VERSION}/LICENSE" "${BASEPATH}/LICENSE"
 
     cd "${BASEPATH}"
 
